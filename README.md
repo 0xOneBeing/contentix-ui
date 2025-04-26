@@ -4,6 +4,8 @@ This repository contains the source code for the ContentIX UI, a simple landing 
 
 **Live Demo:** [https://contentix-ui.vercel.app/](https://contentix-ui.vercel.app/)
 
+**KINDLY STAR THIS REPO IF YOU LIKE IT! 🙏🙏🙏**
+
 ## Overview
 
 ContentIX UI showcases a clean landing page design featuring:
