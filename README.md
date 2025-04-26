@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# ContentIX UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for the ContentIX UI, a simple landing page demonstration built with modern web technologies.
 
-Currently, two official plugins are available:
+**Live Demo:** [https://contentix-ui.vercel.app/](https://contentix-ui.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+ContentIX UI showcases a clean landing page design featuring:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- A prominent headline and descriptive text.
+- A clear call-to-action button.
+- A visually distinct layout separating text content and a splash image area.
+- A dynamic dark/light mode toggle with user preference persistence via `localStorage`.
+- Custom theming integrated with Ant Design.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Inspired by this [post on X](https://x.com/anna_designer__/status/1915799928846114905)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- ✨ **React & TypeScript:** Built using React functional components and TypeScript for type safety.
+- 🎨 **Ant Design:** Leverages the Ant Design component library for UI elements like Buttons, Images, and FloatButton.
+- 💅 **Tailwind CSS:** Uses Tailwind CSS for utility-first styling and layout.
+- 🌗 **Dark/Light Mode:** Includes a theme toggle that switches between dark and light modes. The selected theme is saved in `localStorage`.
+- ⚙️ **CSS Variables:** Utilizes CSS variables for theme properties (background color, text color, primary color, splash image) allowing easy theme switching.
+- 🚀 **Vite:** (Assumed) Likely built using Vite for a fast development experience.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Technologies Used
+
+- React + Vite + TS
+- TypeScript
+- Ant Design
+- Tailwind CSS
+
+## Getting Started
+
+Follow these instructions to get a local copy up and running.
+
+### Prerequisites
+
+- Node.js (v16 or later recommended)
+- npm, yarn, or pnpm
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd contentix-ui
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+### Running the Development Server
+
+To start the development server, run:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
