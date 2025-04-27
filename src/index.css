@@ -27,3 +27,13 @@ body {
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
+
+.splash {
+  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+}
+
+/* .splash-image-container {
+  background-color: red !important;
+  background-image: "var(--splash-image) !important";
+} */

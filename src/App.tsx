@@ -13,6 +13,10 @@ function App() {
     return savedTheme === "dark";
   });
 
+  const imageLink = isDarkMode
+    ? "/dark-right-splash.png"
+    : "/light-right-splash.png";
+
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
@@ -24,37 +28,23 @@ function App() {
   };
 
   return (
-    <div
-      className="contentix p-10 w-screen h-screen"
-      style={{
-        backgroundColor: "var(--background-color)",
-        color: "var(--text-color)",
-      }}
-    >
-      <FloatButton
-        icon={isDarkMode ? <BulbFilled /> : <BulbOutlined />}
-        type="primary"
-        onClick={toggleDarkMode}
-        style={{ right: 24 }}
-        tooltip={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-      />
-
-      <div className="w-full h-full flex items-stretch px-6 gap-6">
-        <div className="w-1/2 h-full flex flex-col justify-between">
-          <div className="flex items-center gap-1">
+    <div className="contentix p-4 lg:p-10 w-full h-full lg:h-screen bg-[var(--background-color)] text-[var(--text-color)]">
+      <div className="w-full h-full flex flex-col lg:flex-row items-stretch lg:px-6 pt-10 pb-20 gap-32 lg:gap-6">
+        <div className="w-full lg:w-1/2 h-full flex flex-col justify-between">
+          <div className="w-full flex items-center gap-1 mb-10 lg:mb-0">
             <span className="circle w-5 h-5 bg-[var(--primary-color)] rounded-full text-white"></span>
             <h1 className="font-bold">CONTENTIX</h1>
           </div>
 
-          <div>
-            <h1 className="w-[470px] text-6xl font-bold mb-6">
+          <div className="mb-10 lg:mb-0">
+            <h1 className="w-full lg:w-[470px] text-6xl font-bold mb-6">
               Bring your <em className="font-light">vision</em> to{" "}
               <span className="font-light">life</span> in{" "}
               <span className="text-[var(--primary-color)]">seconds</span> with
               AI.
             </h1>
 
-            <p className="w-[450px] text-base mb-6">
+            <p className="lg: w-full lg:w-[450px] text-base mb-6">
               With our smart tools, you can generate stunning visuals and
               content in seconds. Designed for creators, marketers, and
               innovators who move fast and think big.
@@ -87,15 +77,26 @@ function App() {
         </div>
 
         <div
-          className="w-1/2 h-full rounded-4xl"
+          className="splash-image-container w-full h-full lg:w-1/2 rounded-4xl bg-contain bg-no-repeat bg-center"
           style={{
             backgroundImage: "var(--splash-image)",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
           }}
-        />
+        >
+          <img
+            src={imageLink}
+            alt="Splash Image"
+            className="splash-image w-full h-full object-contain"
+          />
+        </div>
       </div>
+
+      <FloatButton
+        type="primary"
+        style={{ right: 24 }}
+        onClick={toggleDarkMode}
+        icon={isDarkMode ? <BulbFilled /> : <BulbOutlined />}
+        tooltip={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      />
     </div>
   );
 }
